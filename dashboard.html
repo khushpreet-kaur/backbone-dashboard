@@ -14,7 +14,7 @@
 	<!-- Nav tabs -->
   	<ul class="nav nav-tabs" role="tablist">
 	    <li role="presentation" class="active"><a href="#search" aria-controls="search" role="tab" data-toggle="tab">Search Labs</a></li>
-	    <li role="presentation"><a href="#lab" aria-controls="lab" role="tab" data-toggle="tab">Labs</a></li>
+	    <li role="presentation"><a href="#lab" aria-controls="lab" role="tab" data-toggle="tab" onclick="showLabs(this.value)">Labs</a></li>
 	    <li role="presentation"><a href="#inst" aria-controls="inst" role="tab" data-toggle="tab">Institutes</a></li>
 	    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Disciplines</a></li>
 	    <li role="presentation"><a href="#dev" aria-controls="dev" role="tab" data-toggle="tab">Developers</a></li>
@@ -104,7 +104,7 @@
 	</form>
 </div>
    
-    <div role="lab" class="tab-pane" id="lab">Total number of labs: 
+    <div role="lab" class="tab-pane" id="lab" ><br>Total number of labs: 
     	<script type="text/template" id="labsview-root-template">
 		<table class="table striped-table" id="labs-table">
 			<tr>
@@ -120,11 +120,11 @@
 		</tr>
 	</script>
     </div>
-    <div role="tabpanel" class="tab-pane" id="inst">Total number of institutes: </div>
-    <div role="tabpanel" class="tab-pane" id="settings">Total number of disciplines: </div>
-    <div role="tabpanel" class="tab-pane" id="dev">Total number of developers: </div>
-    <div role="tabpanel" class="tab-pane" id="tech">Total number of technologies: </div>
-    <div role="tabpanel" class="tab-pane" id="phase2">Total number of labs identifield for phase-II: </div>
+    <div role="tabpanel" class="tab-pane" id="inst"><br>Total number of institutes: </div>
+    <div role="tabpanel" class="tab-pane" id="settings"><br>Total number of disciplines: </div>
+    <div role="tabpanel" class="tab-pane" id="dev"><br>Total number of developers: </div>
+    <div role="tabpanel" class="tab-pane" id="tech"><br>Total number of technologies: </div>
+    <div role="tabpanel" class="tab-pane" id="phase2"><br>Total number of labs identifield for phase-II: </div>
   </div>
 </div>
 

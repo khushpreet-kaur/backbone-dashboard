@@ -30,7 +30,8 @@ var LabsView = Backbone.View.extend({
     }
 })
 
-function labs_function() {
+function showLabs() {
+    // alert("something")
     console.log('initing dashboard');
     var labs = new Labs();
     labs.fetch({
@@ -80,7 +81,7 @@ var InstitutesView = Backbone.View.extend({
     }
 })
 
-function institutes_function() {
+function institutes() {
     console.log('initing dashboard');
     var institutes = new Institutes();
     console.log(institutes);
@@ -130,7 +131,7 @@ var DisciplineView = Backbone.View.extend({
     }
 })
 
-function disciplines_function() {
+function disciplines() {
     console.log('iniating dashboard');
     var disciplines = new Disciplines();
     disciplines.fetch({success: function(coll, response, opts) {
@@ -180,7 +181,7 @@ var DeveloperView = Backbone.View.extend({
     }
 })
 
-function developers_function() {
+function developers() {
     console.log('iniating dashboard');
     var developers = new Developers();
     developers.fetch({success: function(coll, response, opts) {
@@ -230,7 +231,7 @@ var TechnologiesView = Backbone.View.extend({
     }
 })
 
-function technologies_function() {
+function technologies() {
     console.log('initing dashboard');
     var technologies = new Technologies();
     technologies.fetch({
