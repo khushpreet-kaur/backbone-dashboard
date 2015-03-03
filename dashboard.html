@@ -1,32 +1,140 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" type="text/css" href="dashboard.css" />
-<link href="tabcontent.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src = "jquery-1.11.2.min.js"></script>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-<script type="text/javascript" src = "underscore-min.js"></script>
-<script type="text/javascript" src = "backbone-min.js"></script>
-
-
-
-<script src="tabcontent.js" type="text/javascript"></script>
-<script type="text/javascript" src = "dashboard.js"></script>
-<link rel="stylesheet" href="test.css" type="text/css">
-<script src="http://backbonejs.org/backbone.js"></script> 
-
+<head>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+</head>
 
 <body>
-  <div id="header">Virtual Labs Dashboard
-    <div class = "VLEAD" ><a href="http://vlead.virtual-labs.ac.in/"> <img src="images/VLEAD.png" width="100%" height="100%"></a></div>
-    <div id="login"><button class="button_example" onclick="logout()">Log Out </a></div>
+	<div class="container"><h1 id="header">Virtual Labs Dashboard</h1>
+	<div role="tabpanel">
 
-<div class="line" ></div>
-  <ul class="tabs" id = "labId">
-    <li><a href="#view1" >Labs</a></li>
-  </ul>
+	<!-- Nav tabs -->
+  	<ul class="nav nav-tabs" role="tablist">
+	    <li role="presentation" class="active"><a href="#search" aria-controls="search" role="tab" data-toggle="tab">Search Labs</a></li>
+	    <li role="presentation"><a href="#lab" aria-controls="lab" role="tab" data-toggle="tab">Labs</a></li>
+	    <li role="presentation"><a href="#inst" aria-controls="inst" role="tab" data-toggle="tab">Institutes</a></li>
+	    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Disciplines</a></li>
+	    <li role="presentation"><a href="#dev" aria-controls="dev" role="tab" data-toggle="tab">Developers</a></li>
+	    <li role="presentation"><a href="#tech" aria-controls="tech" role="tab" data-toggle="tab">Technologies</a></li>
+	    <li role="presentation"><a href="#phase2" aria-controls="phase2" role="tab" data-toggle="tab">Labs Identified for Phase-II</a></li>
+  	</ul>
+
+  	<!-- Tab panes -->
+  	<div class="tab-content">
+   	<div role="search" class="tab-pane active" id="search"><br><br>
+    <form name="myform" class="form-horizontal">
+	    <div class="form-group">
+	    <label class="col-sm-5 control-label">Select Institute:</label>
+	    <div class='col-md-2'>
+	        <select class="form-control" name ="selectbyinstitute">
+	        <option value="0">None</option>
+	        <option value="1">Amrita University</option>
+	        <option value="2">COEP</option>
+	        <option value="3">Dayalbagh</option>
+	        <option value="4">IIIT-H</option>
+	        <option value="5">IIT-Bombay</option>
+	        <option value="6">IIT-Delhi</option>
+	        <option value="7">IIT-Guwahati</option>
+	        <option value="8">IIT-Kanpur</option>
+	        <option value="9">IIT-Kharagpur</option>
+	        <option value="10">IIT-Madras</option>
+	        <option value="11"> IIT-Roorkee</option>
+	        <option value="12">NIT-K</option>
+	      </select>
+	    </div>
+	  </div>
+
+	  <div class="form-group">
+	  <label class="col-sm-5 control-label">Select discipline name:</label>
+	  
+	  <div class='col-md-2'>
+	      <select class="form-control" name ="selectbydiscipline">
+	      <option value="0">None</option>
+	      <option value="1">Aerospace Engineering</option>
+	      <option value="2">Biotechnology and Biomedical Engineering</option>
+	      <option value="3">Chemical Engineering</option>
+	      <option value="4">Chemical Sciences</option>
+	      <option value="5">Civil Engineering</option>
+	      <option value="6">Computer Science and Engineering</option>
+	      <option value="7">Electrical Engineering</option>
+	      <option value="8">Electronics and Communications</option>
+	      <option value="9">Humanities</option>
+	      <option value="10"> Mechanical Engineering</option>
+	      <option value="11">Physical Sciences</option>
+	      <option value="12">Textile Department</option>
+	    </select>
+	  </div>
+	  </div>
+
+	  <div class="form-group">
+	  <label  class="col-sm-5 control-label">Select Status:</label>
+	  <div class='col-md-2'>
+	      	<select class="form-control"name ="selectbystatus">
+	    	<option value="None">None</option>
+	  	    <option value="Hosted">Hosted</option>
+	    	<option value="Not Hosted">Not Hosted</option>
+	    	<option value="Hosted with simulations">Hosted with simulations</option>
+	    	</select>
+	  </div>
+	  </div>
+
+	  <div class="form-group">
+	  <label class="col-sm-5 control-label">Select Integration Level:</label>
+	  <div class='col-md-2'>
+	      <select class="form-control" name = "selectbyintegrationlevel">
+	      <option value="None">None</option>
+	      <option value="0">0</option>
+	      <option value="1">1</option>
+	      <option value="2">2</option>
+	      <option value="3">3</option>
+	      <option value="4">4</option>
+	      <option value="5">5</option>
+	    </select>
+	  </div>
+	  </div>
+
+	  <div class="form-group">
+	    <div class="col-sm-offset-5 col-sm-1">
+	    	<a href="javascript:showdisplay(this.value)" class="btn btn-primary" value="test">Search</a>
+	    </div>
+	  </div>
+	</form>
+</div>
+   
+    <div role="lab" class="tab-pane" id="lab">Total number of labs: 
+    	<script type="text/template" id="labsview-root-template">
+		<table class="table striped-table" id="labs-table">
+			<tr>
+				<th> Lab Id </th>
+				<th> Lab Name </th>
+			</tr>
+		</table>
+	</script>
+	<script type="text/template" id="lab-model-template">
+		<tr>
+			<td> <%= id %> </td>
+			<td> <%= name %> </td>
+		</tr>
+	</script>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="inst">Total number of institutes: </div>
+    <div role="tabpanel" class="tab-pane" id="settings">Total number of disciplines: </div>
+    <div role="tabpanel" class="tab-pane" id="dev">Total number of developers: </div>
+    <div role="tabpanel" class="tab-pane" id="tech">Total number of technologies: </div>
+    <div role="tabpanel" class="tab-pane" id="phase2">Total number of labs identifield for phase-II: </div>
+  </div>
 </div>
 
-<div id="test" align="center"></div>
+<!-- Scripts -->
+	<script type="text/javascript" src="lib/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="lib/underscore-min.js"></script>
+	<script type="text/javascript" src="lib/backbone-min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="complete.js"></script>
+	<script type="text/template" id="labsview-root-template">
+	
 </body>
 </html>
